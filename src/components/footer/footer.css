@@ -1,0 +1,18 @@
+.privacy{
+    font-family: Lato;
+    font-size: 23px;
+    font-weight: bold;
+    color: grey;
+}
+.footer{
+    margin-top: 100px;
+    padding-left: 60px;
+}
+.copyright{
+    color: lightgrey;
+    font-weight: bold;
+}
+.foterIcon{
+    margin-right: 50px;
+    color: grey;
+}

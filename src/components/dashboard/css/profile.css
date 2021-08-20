@@ -1,0 +1,53 @@
+.colored-box{
+    background-color: rgb(71, 15, 71);
+    height: 200px;
+    padding-top: 30px;
+    padding-left: 30px;
+    border-radius: 10px;
+}
+.profile_grid{
+    margin-top: 30px;
+    height: max-content;
+}
+.profile_options{
+    background-color: white;
+}
+.dark_badge{
+    padding: 10px;
+    color: white;
+    background-color: rgb(9, 9, 26);
+    border-radius: 30px;
+    width: fit-content;
+
+}
+.avatar_profile_img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.name{
+    font-size: 13px;
+}
+.colored_box_text{
+    font-size: 16px;
+    color: whitesmoke;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+.hideOnDesktop_profile{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.DashboardSpan{
+    padding-top: 10px;
+    color: rgb(9, 9, 26);
+    font-weight: bolder;
+}
+
+@media screen and (max-width:700px){
+    .colored-box{
+     
+        margin-left: 30px;
+        width: 90%;
+    }
+}

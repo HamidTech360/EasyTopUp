@@ -1,0 +1,57 @@
+.headerWrapper{
+    padding-left: 50px;
+    padding-top: 30px;
+  
+    
+}
+#nav-1, #nav-2, #nav-3{
+    color: rgb(65, 59, 59);
+    font-weight:500;
+}
+#btn{
+    background-color: fuchsia;
+    color: white;
+}
+body{
+    background-color: whitesmoke;
+}
+.icon{
+    font-weight: bold;
+}
+.hideOnDesktop{
+    display: none;
+}
+.dynamic_icons{
+    color:rgb(9, 9, 26) ;
+}
+.welcome_card{
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.welcomeText{
+    font-weight: bolder;
+    color:rgb(9, 9, 26) ;
+}
+.faint_welcome{
+    color: lightgrey;
+    font-weight: 400;
+    font-size: 10px;
+}
+@media screen and (max-width:950px) {
+    .hideOnMobile{
+        display: none;
+    }
+    .hideOnDesktop{
+        display: inline-flex;
+        padding-top:-100px;
+        padding-right: 30px;
+    }
+    .headerWrapper{
+        padding-top: 10px;
+        padding-left: 30px;
+   
+    }
+    .graphIcon{
+        margin-bottom: -10px;
+    }
+}
