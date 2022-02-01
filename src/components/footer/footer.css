@@ -6,7 +6,33 @@
 }
 .footer{
     margin-top: 100px;
-    padding-left: 60px;
+    padding-left: 30px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    min-height: 100px;
+    background-color: #081828;
+    color: whitesmoke;
+}
+.footer-text{
+    font-size: 15px;
+    font-weight: 400;
+    max-width: 500px;
+    margin-top: 30px;
+}
+.footer-icons{
+    padding-left: 50px;
+    margin-top: 30px;
+}
+.footer-icon{
+    margin-right: 20px;
+}
+.footer-hr{
+    margin-top: 40px;
+}
+.designed-by{
+    font-size: 17px;
+    font-weight: 500;
 }
 .copyright{
     color: lightgrey;
@@ -15,4 +41,10 @@
 .foterIcon{
     margin-right: 50px;
     color: grey;
+}
+
+@media screen and (max-width:768px) {
+    .footer-icons{
+        padding-left: 20px;
+    }
 }

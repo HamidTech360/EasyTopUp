@@ -1,0 +1,36 @@
+.dashboard-content{
+    padding: 0 !important;
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.profile_grid{
+    /* margin-top: 30px; */
+    height: max-content;
+}
+
+.hideOnDesktop_profile{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.bell-icon-on-mobile{
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width:1004px) and (min-width:769px){
+    .dashboard-content{
+        margin-left: 60px;
+        
+    }
+}
+@media screen and (max-width:768px){
+    .colored-box{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 90%;
+    }
+    .dashboard-content{
+        margin-left: unset;
+    }
+}

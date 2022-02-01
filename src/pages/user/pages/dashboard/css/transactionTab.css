@@ -1,0 +1,30 @@
+.trans-tab-grid{
+    background-color: white;
+    min-height: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+.history{
+    background-color: whitesmoke;
+    padding: 20px;
+    margin-right: 20px;
+}
+.history-icon{
+    color: #ffad46;
+    margin-right: 10px;
+}
+.wallet-summary-icon{
+    color: rgb(80, 20, 80);
+    margin-right: 10px;
+}
+.history-text{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+@media screen and (max-width:768px) {
+    .trans-tab-grid{
+        padding-left: 30px;
+    }
+}

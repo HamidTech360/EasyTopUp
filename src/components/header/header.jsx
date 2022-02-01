@@ -1,10 +1,6 @@
 import React from 'react'
 import { NavLink} from 'react-router-dom';
-
-
-
-import TabList from './list';
-
+import SwipeableSideNav from './swipeable-side-nav';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle'
 import GraphicEqIcon from '@material-ui/icons/GraphicEq';
@@ -13,8 +9,8 @@ import './header.css'
 const Header = (props)=>{
 
     return(
-        <div className="headerWrapper row">
-           <div className="col-7 col-xs-8 graphIcon">
+        <div className="headerWrapper">
+           
                 <span className="icon">
                     <GraphicEqIcon
                         style = {{
@@ -24,13 +20,9 @@ const Header = (props)=>{
                     />
                     EasyTopUp
                 </span>
-           </div>
-
-
-            <div className="col-lg-5 col-xs-3">
-                
+                         
                  {/* Navbar */}
-                 <div className="hideOnMobile">
+                 <span className="hideOnMobile pull-right">
                         <ul className="nav ">
                             <li  className="nav-item " >
                                 <NavLink className="nav-link active" id="nav-1" aria-current="page" to="/">Home</NavLink>
@@ -48,14 +40,14 @@ const Header = (props)=>{
                                 <NavLink className="nav-link " id="nav-3" to="/signup" ><button className="btn" id="btn">signUp</button></NavLink>
                             </li>
                         </ul>
-                 </div>
+                 </span>
                  {/* Menu Icon */}
                  <div className="hideOnDesktop float-right pull-right">
-                    <TabList options={props.options} position="right"/>
+                    <SwipeableSideNav options={props.options} position="right"/>
                  </div>
                
                    
-            </div>
+            
            
          </div>
         

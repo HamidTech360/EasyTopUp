@@ -1,40 +1,49 @@
-import React from 'react'
-import SideNav from './elements/sidenav'
-import TabList from '../header/list'
-import QuickLinks from './elements/quicklinks'
-import Profile_Header from './elements/profile-header'
-import { useEffect, useState  } from 'react'
+import React, { useEffect, useState  } from 'react'
+import { BrowserRouter, Switch,Route, Link } from 'react-router-dom'
 import {apiUrl} from '../../config.json'
 import axios from 'axios'
-import './css/profile.css'
+
+//custom components
+import SideNav from './components/sidenav'
+import SwipeableSideNav from './components/drawer'
+import Page_Header from './components/page-header'
+
+//Pages
+import DashBoard from './pages/dashboard/dashboard'
+import Fund_wallet from './pages/fund_wallet/fund_wallet'
+import Data from './pages/data/data'
+import Airtime from './pages/airtime/airtime'
+
+//styles
+import './css/user.css'
 
 
 
-const Profile = (props)=>{
-    const options = [
+const User = (props)=>{
+    const NavOptions = [
         {
-          label:'Home',
-          target:'/profile',
+          label:'Dashboard',
+          target:'/user',
           icon:'fa-home'
         },
         {
           label:'Fund wallet',
-          target:'/fund_wallet',
+          target:'/user/fund_wallet',
           icon:'fa-cc-mastercard'
         },
         {
             label:'Buy Airtime',
-            target:'/profile/airtime',
+            target:'/user/airtime',
             icon:'fa-phone'
         },
         {
           label:'Buy Data',
-          target:'/profile/data_sub',
+          target:'/user/data',
           icon:'fa-rss'
         },
         {
           label:'Electricity Bill',
-          target:'/profile/electricity',
+          target:'/user/electricity',
           icon:'fa-podcast'
         },
         {
@@ -43,7 +52,10 @@ const Profile = (props)=>{
           icon:'fa-user-times'
         }
       ]
-      const [userData, setUserData] = useState({})
+      const [userData, setUserData] = useState({
+          firstName:"Hamid",
+          balance:'20000'
+      })
 
       useEffect(()=>{
 
@@ -94,60 +106,36 @@ const Profile = (props)=>{
 
     return(
         <div className="profile_wrapper">
-            <div className="row">
-                <div className="col-7 col-xs-8">
+            
+                <div>
                     <div className="hideOnDesktop hideOnDesktop_profile">
-                        <TabList options={options} position="left"/>
+                       <SwipeableSideNav options={NavOptions} position="left"/>
+                        <span className="pull-right bell-icon-on-mobile"><i className="fa fa-bell pull-right"></i></span>    
                     </div>
                     <div className="hideOnMobile">
-                        <Profile_Header/>
+                        <Page_Header/>
+                        
                     </div>
                 </div>
-                <div className="col-4 DashboardSpan">
-                    <span className="pull-right">Dashboard/</span>
-                </div>
-            </div>
+               
+          
             
           
            <div className="row profile_grid">
-               <div className="col-lg-3 col-xs-0 hideOnMobile profile_options">
-                    <SideNav/>
+               <div className="col-lg-3 col-md-3 col-xs-0 hideOnMobile profile_options">
+                    <SideNav NavOptions={NavOptions}/>
                </div>
 
-               <div className=" col-lg-7 col-xs-10">
-                    <div className="row colored-box">
-                        <div className="col-6">
-                            <div className="dark_badge row">
-                               <div className="col-4">
-                                    <img src="assets/avatar.png" className="avatar_profile_img" alt="" />
-                               </div> 
-                               <div className="name col-7">{userData.firstname}</div>
-                            </div>
-                        </div>
-                        <div className="col-6">
-                            <button className="btn btn-light pull-right">Fund Wallet</button>
-                        </div>
-
-                        <div className="col-6">
-                            <div className="colored_box_text">
-                                Wallet Balance
-                            </div>
-                        </div>
-                        <div className="col-6 colored_box_text">
-                            <span className=" pull-right">#{userData.balance}</span>
-                        </div>
-
-                        <div className="col-6">
-                            <div className="colored_box_text">
-                                Commission
-                            </div>
-                        </div>
-                        <div className="col-6 colored_box_text">
-                            <span className=" pull-right">#0.00</span>
-                        </div>
-                    </div>
-
-                    <QuickLinks/>
+               <div className=" col-lg-7 col-md-7 col-sm-12 col-xs-12 dashboard-content"> 
+                    
+                        <Switch>
+                            <Route path="/user/data"  component={Data} />
+                             <Route path="/user/airtime"  component={Airtime} />
+                            <Route path="/user/fund_wallet"  component={Fund_wallet} />
+                            <Route path="/user" exact component={DashBoard} />
+                        </Switch>
+                     
+                   {/* <DashBoard userData={userData} />  */}
                </div>
                
            </div>
@@ -156,4 +144,4 @@ const Profile = (props)=>{
     )
 }
 
-export default Profile 
+export default User 
