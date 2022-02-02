@@ -5,7 +5,7 @@
     font-family: Lato;  
 }
 .colored{
-    color: fuchsia;
+    color: rgb(107, 19, 107);
 }
 .network-img{
     width: 300px;
@@ -13,12 +13,12 @@
    border-radius: 50%;
 }
 .white-text{
-    color: white;
+    color: whitesmoke;
 }
 .medium-text{
     font-size: 18px;
     font-weight: 600;
-    color: white;
+    color: whitesmoke;
 }
 .faint-text{
     margin-top: 20px;
@@ -28,6 +28,13 @@
 }
 .btnJoin{
     width: 100px;
+    margin-top: 50px;
+  
+}
+#btn-Join{
+    background-color: rgb(107, 19, 107);
+    font-weight: 600;
+    color: whitesmoke;
 }
 .overlay{
     background-color: black;
@@ -38,9 +45,9 @@
 /* @media screen and (min-width:769px) and (max-width:) */
 @media screen and (max-width:768px){
     .wrapper{
-        font-size: 25px;
+        font-size: 30px;
         margin-top: 0px;
-     
+        font-weight: 600;
     }
     .overlay{
         padding-left:0px;

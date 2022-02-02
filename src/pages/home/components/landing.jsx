@@ -15,12 +15,12 @@ const Landing = ()=>{
                         <div className="medium-text">
                             We provide easy and automated topup 
                         </div>
-                        <div className="faint-text">
+                        {/* <div className="faint-text">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, quidem. <br/>
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, maiores.
-                        </div>
+                        </div> */}
                         <div>
-                            <button className="btn btnJoin" id="btn">Join us</button>
+                            <button className="btn btnJoin" id="btn-Join">Register</button>
                         </div>
                     </div>
                     
