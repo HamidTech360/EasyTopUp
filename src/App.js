@@ -1,14 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import HomePage from './pages/home/home'
-import Footer from './components/footer/footer';
+import Home from './pages/home/home';
 import SignUp from './pages/signUp/signup';
 import Login from './pages/login/login';
 import User from './pages/user/user'
-import Fund_wallet from './components/fund_wallet/fund_wallet';
-import Airtime from './components/airtime/airtime';
-import Data from './components/data/data';
-import Logout from './components/dashboard/logout';
+
 import ScrollToTop from './components/scrollToUp/scroll';
 function App() {
   return (
@@ -25,7 +21,7 @@ function App() {
         <Route path="/user" component={User}/>
         <Route path="/login" component={Login}/>
         <Route path="/signup" component={SignUp}/>
-        <Route path="/" component={HomePage}/>
+        <Route path="/" component={Home}/>
       </Switch>
       {/* <Footer/> */}
     </BrowserRouter>

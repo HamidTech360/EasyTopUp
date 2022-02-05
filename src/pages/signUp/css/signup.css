@@ -20,10 +20,12 @@
 }
 .signup_heading{
     margin-bottom: 20px;
-    color: rgb(110, 5, 110);
+    color: #2b044d;
+    font-weight: 700;
+    font-size: 30px;
 }
 .btn-submit{
-    background-color: fuchsi;
+    background-color: #2b044d;
     color: whitesmoke;
     width: 100%;
 }

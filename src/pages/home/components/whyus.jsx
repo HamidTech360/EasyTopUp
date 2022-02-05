@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/whyus.css'
+import '../css/whyus.css'
 const WhyUs = ()=>{
     return(
         <React.Fragment>
@@ -7,11 +7,11 @@ const WhyUs = ()=>{
                 
                 <div className="col-lg-5 col-xs-12">
                    
-                    <div className="grid-text" id="whyusText">
-                    <div className="bold-text whyUsHeading">
-                        Why Easy TopUp?
-                        <div><button className="btn-card-divider"></button></div>
-                    </div>
+                    <div className="whyUsText" id="whyusText">
+                        <div className="whyUsHeading">
+                            Why Easy TopUp?
+                            <div><button className="btn-card-divider"></button></div>
+                        </div>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                          Quibusdam ratione expedita enim officia, laborum aliquid tempore ipsum magnam, quo velit facilis 
                         reiciendis! Aspernatur officia libero fuga deserunt excepturi, sint aliquid? <br/>
@@ -20,8 +20,8 @@ const WhyUs = ()=>{
                     </div>
                 </div>
 
-                <div className="col-lg-7 col-xs-12 img-box">
-                    <img src="../../../assets/abt.svg" className="manImg" alt="" />
+                <div className="col-lg-7 col-xs-12 img-box hideOnMobile">
+                    <img src="../../../assets/img2.png" className="manImg" alt="" />
                 </div>
 
             </div>        

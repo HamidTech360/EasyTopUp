@@ -1,0 +1,72 @@
+.banner1{
+    background-color: #f4feff;
+    min-height: 100vh;
+}
+.banner1-text{
+    padding-top: 100px;
+    padding-left: 70px;
+    
+}
+.banner1-small-text{
+    color: #2b044d;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+.banner1-bold-text{
+    color: #2b044d;
+    font-weight: 700;
+    font-size: 50px;
+    max-width: 470px;
+    margin-bottom: 20px;
+    /* line-height: 65px; */
+}
+.banner1-medium-text{
+    color: grey;
+    font-weight: 500;
+    font-size: 15px;
+    max-width: 470px;
+}
+.banner1-img-container{
+    padding-right: 40px;
+    /* border: 2px solid red; */
+}
+.phone-img{
+    height: 550px;
+    /* width: 80%; */
+}
+.banner1-btn-join{
+    background-color: #f9218d;
+    border: 1px solid #f9218d;
+    color: whitesmoke;
+    min-width: 140px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 45px;
+    margin-top: 30px;
+}
+
+@media screen and (min-width:769px) and (max-width:920px){
+    .banner1-bold-text{
+        font-size: 30px;
+    }
+    .banner1-img-container{
+        padding-right: 0px;
+        
+    }
+    .banner1{
+        padding-right: 20px !important;
+        
+    }
+}
+
+@media screen and (max-width:768px) {
+    .banner1-bold-text{
+        font-size: 35px;
+    }
+    .banner1-text{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}

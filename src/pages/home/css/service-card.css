@@ -1,0 +1,23 @@
+.service-card{
+    min-height: 70px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.service-card-heading{
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 20px;
+    color: unset;
+}
+.service-light-text{
+    font-size: 14px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: grey;
+}

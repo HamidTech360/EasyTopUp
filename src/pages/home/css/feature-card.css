@@ -1,0 +1,17 @@
+.feature-card{
+    display: flex;
+    flex-direction: row;
+}
+.fab{
+    margin-right: 15px;
+    color: whitesmoke;
+}
+.feature-text-bold{
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.feature-text-light{
+    font-size: 15px;
+    font-weight: 400;
+}

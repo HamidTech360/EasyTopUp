@@ -2,19 +2,30 @@
     padding-left: 50px;
     padding-top: 20px;
     padding-bottom: 10px;
-    
+    font-family: 'Nunito', sans-serif;
+
+    padding-right: 100px;
+    background-color: #f4feff;
 }
-#nav-1, #nav-2, #nav-3{
+/* #nav-1, #nav-2, #nav-3{
     color: rgb(65, 59, 59);
     font-weight:500;
+} */
+.nav-item{
+    font-size: 15px;
+    color:#8f1bdc;
+    font-weight: 600;
+    
+}
+.nav-item:active{
+    color: red;
 }
 #btn{
-    background-color: fuchsia;
+    background-color: #8667DE;
+    font-size: 14px;
     color: white;
 }
-body{
-    background-color: whitesmoke;
-}
+
 .icon{
     font-weight: bold;
 }
@@ -22,7 +33,7 @@ body{
     display: none;
 }
 .dynamic_icons{
-    color:rgb(9, 9, 26) ;
+    /* color:rgb(9, 9, 26) ; */
 }
 .welcome_card{
     padding: 10px;
@@ -37,19 +48,34 @@ body{
     font-weight: 400;
     font-size: 10px;
 }
+.home-side-navs{
+    padding-left: 20px;
+    color: whitesmoke;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.home-nav-icon{
+    margin-right: 10px;
+}
+@media screen and (min-width:769px) and (max-width:920px){
+    .headerWrapper{
+        padding-bottom: 40px;
+    }
+}
+
 @media screen and (max-width:768px) {
     .hideOnMobile{
         display: none;
     }
     .hideOnDesktop{
         display: inline-flex;
-        padding-top:-100px;
-        padding-right: 30px;
+        /* padding-top:100px; */
+        
     }
     .headerWrapper{
         padding-top: 10px;
         padding-left: 30px;
-   
+        padding-right: 20px;
     }
     .graphIcon{
         margin-bottom: -10px;

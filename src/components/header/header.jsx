@@ -14,7 +14,7 @@ const Header = (props)=>{
                 <span className="icon">
                     <GraphicEqIcon
                         style = {{
-                            color:'fuchsia',
+                            color:'#712fda',
                             fontSize:'45px'
                         }}
                     />
@@ -24,21 +24,31 @@ const Header = (props)=>{
                  {/* Navbar */}
                  <span className="hideOnMobile pull-right">
                         <ul className="nav ">
-                            <li  className="nav-item " >
-                                <NavLink className="nav-link active" id="nav-1" aria-current="page" to="/">Home</NavLink>
-                            </li>
                             
-                            <li id="" className="nav-item">
-                                <NavLink className="nav-link" id="nav-2" to="/login">login</NavLink>
-                            </li>
-                        
-                            <li id="" className="nav-item">
-                                <NavLink className="nav-link " id="nav-3" to="/" >contact US</NavLink>
-                            </li>
+                                <NavLink className="nav-link active" id="nav-1" aria-current="page" to="/">
+                                    <li className="nav-item">Home</li>
+                                </NavLink>
+                                        
+                                 <NavLink className="nav-link" id="nav-2" to="/service">
+                                     <li className="nav-item">Services</li>
+                                </NavLink>
+                           
+                                 <NavLink className="nav-link " id="nav-3" to="/features" >
+                                     <li className="nav-item">Features</li>
+                                 </NavLink>
 
-                            <li id="" className="nav-item">
-                                <NavLink className="nav-link " id="nav-3" to="/signup" ><button className="btn" id="btn">signUp</button></NavLink>
-                            </li>
+                                 <NavLink className="nav-link " id="nav-3" to="/signup" >
+                                     <li className="nav-item">Sign up</li>
+                                 </NavLink>
+
+                                 <NavLink className="nav-link " id="nav-3" to="/" >
+                                     <li className="nav-item">contact US</li>
+                                 </NavLink>
+
+                                 <NavLink className="nav-link " id="nav-3" to="/login" >
+                                     <li className="nav-item">Login</li>
+                                 </NavLink>
+                           
                         </ul>
                  </span>
                  {/* Menu Icon */}

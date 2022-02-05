@@ -11,16 +11,22 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import './header.css'
 
-const SwipeableSideNav = (props)=>{
 
-    const useStyles = makeStyles({
-        list: {
-          width: 250,
-        },
-        fullList: {
-          width: 'auto',
-        },
-      });
+
+
+const SwipeableSideNav = (props)=>{
+  
+  const useStyles = makeStyles({
+    paper:{
+      background:' rgb(9, 9, 26)',
+      paddingTop:'30px',
+      width:'240px',
+      border:'1px solid rgba(255, 255, 255, 0.21)'
+     
+    }
+  })
+    
+  const styles = useStyles()
 
 
     const [state, setState] = React.useState({
@@ -65,17 +71,17 @@ const SwipeableSideNav = (props)=>{
             </div>
 
             {props.options.map((text, index) => (
-              <ListItem button key={text.label}>
+              
                 <Link to={text.target} style={{textDecoration:'none', color:'black'}}>
-                  <div className="row">
-                      <div className="col-2"><ListItemIcon> <i className={`fa ${text.icon} dynamic_icons`}></i> </ListItemIcon></div>
-                      <div className="col-8"><ListItemText primary={text.label} /></div>
+                  <div className="home-side-navs">
+                      <span className="home-nav-icon"><i className={`fa ${text.icon} dynamic_icons`}></i></span>
+                      <span className="home-nav-item"><span>{text.label}</span></span>
                   </div> 
                     
                     
                     <Divider />
                   </Link>
-              </ListItem>
+             
             ))}
           </List>
      
@@ -86,12 +92,13 @@ const SwipeableSideNav = (props)=>{
         <div>
         
           <React.Fragment>
-            <Button onClick={toggleDrawer(props.position, true)}><i className="fa fa-align-left fa-2x"></i></Button>
+            <Button onClick={toggleDrawer(props.position, true)}><i className="fa fa-align-left fa-2x" style={{color:'#8667DE'}}></i></Button>
             <SwipeableDrawer
               anchor={props.position}
               open={state[props.position]}
               onClose={toggleDrawer(props.position, false)}
               onOpen={toggleDrawer(props.position, true)}
+              classes={{paper:styles.paper}}
             >
               {list(props.position)}
             </SwipeableDrawer>

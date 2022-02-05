@@ -1,0 +1,24 @@
+.services{
+    background-color: #f4feff;
+    min-height: 80vh;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 80px;
+   
+}
+.service-header{
+    color: #2b044d;
+    font-weight: 700;
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width:768px) {
+    .services{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .service-header{
+        font-size: 30px;
+    }
+}
