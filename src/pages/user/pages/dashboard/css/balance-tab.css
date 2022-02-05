@@ -5,15 +5,18 @@
     padding-left: 30px;
     border-radius: 10px;
 }
-.profile_grid{
-    margin-top: 30px;
-    height: max-content;
+.balance-value{
+    font-size: 18px;
+    font-weight: 600;
 }
-.profile_options{
-    background-color: white;
-}
+
 .dark_badge{
-    padding: 10px;
+    /* padding: px; */
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+
     color: white;
     background-color: rgb(9, 9, 26);
     border-radius: 30px;
@@ -29,25 +32,21 @@
     font-size: 13px;
 }
 .colored_box_text{
-    font-size: 16px;
+    font-size: 13px;
     color: whitesmoke;
     margin-top: 10px;
     font-weight: bolder;
-}
-.hideOnDesktop_profile{
-    padding-top: 10px;
-    padding-left: 10px;
 }
 .DashboardSpan{
     padding-top: 10px;
     color: rgb(9, 9, 26);
     font-weight: bolder;
 }
-
-@media screen and (max-width:700px){
-    .colored-box{
-     
-        margin-left: 30px;
-        width: 90%;
-    }
+.btn-fund-wallet{
+    font-size: 12px;
+    font-weight: 500;
+}
+.user-name{
+    font-size: 12px;
+    margin-left: 10px;
 }

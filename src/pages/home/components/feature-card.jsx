@@ -8,7 +8,7 @@ const FeatureCard = ({icon, heading, lightText}) => {
     return ( 
         <div className="feature-card">
             <div className="fab">
-                <Fab style={{backgroundColor:'#8667DE', color:'whitesmoke', padding:'30px'}}>
+                <Fab style={{backgroundColor:'#8667DE', color:'whitesmoke'}}>
                     <i className={`fa ${icon} fa-2x`}></i>
                 </Fab>
             </div>

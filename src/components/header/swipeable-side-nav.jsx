@@ -72,7 +72,7 @@ const SwipeableSideNav = (props)=>{
 
             {props.options.map((text, index) => (
               
-                <Link to={text.target} style={{textDecoration:'none', color:'black'}}>
+                <Link key={index} to={text.target} style={{textDecoration:'none', color:'black'}}>
                   <div className="home-side-navs">
                       <span className="home-nav-icon"><i className={`fa ${text.icon} dynamic_icons`}></i></span>
                       <span className="home-nav-item"><span>{text.label}</span></span>
@@ -92,7 +92,7 @@ const SwipeableSideNav = (props)=>{
         <div>
         
           <React.Fragment>
-            <Button onClick={toggleDrawer(props.position, true)}><i className="fa fa-align-left fa-2x" style={{color:'#8667DE'}}></i></Button>
+            <Button onClick={toggleDrawer(props.position, true)}><i className="fa fa-align-left fa-2x" style={{color:'#2b044d'}}></i></Button>
             <SwipeableDrawer
               anchor={props.position}
               open={state[props.position]}

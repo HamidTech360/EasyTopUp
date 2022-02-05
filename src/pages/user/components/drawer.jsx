@@ -72,15 +72,17 @@ const SwipeableSideNav = (props)=>{
 
             {props.options.map((text, index) => (
               
-                <Link key={index} to={text.target} style={{textDecoration:'none', color:'whitesmoke'}}>
+                <Link 
+                  key={index} 
+                  to={text.target} 
+                  style={{textDecoration:'none', color:'whitesmoke'}}
+                  
+                >
                   <div className="drawer-list">
                         <span className="drawer-icon"><i className={`fa ${text.icon}`}></i> </span>
                         <span className="drawer-label">{text.label}</span>
-                  </div> 
-                    
-                    
-                
-                  </Link>
+                  </div>               
+                </Link>
              
             ))}
           </List>

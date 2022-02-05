@@ -9,18 +9,20 @@
     background-color: whitesmoke;
     padding: 20px;
     margin-right: 20px;
+    display: flex;
+    flex-direction: row;
 }
 .history-icon{
     color: #ffad46;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 .wallet-summary-icon{
     color: rgb(80, 20, 80);
     margin-right: 10px;
 }
 .history-text{
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 13px;
 }
 
 @media screen and (max-width:768px) {

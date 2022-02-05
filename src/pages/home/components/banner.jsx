@@ -16,7 +16,7 @@ const Banner1 = () => {
                          Molestias dolores adipisci aliquam qui voluptate, 
                     </div>
                     <div className="banner1-btns">
-                        <button className="banner1-btn-join">Join now</button>
+                        <button className="banner1-btn-join">Register now </button>
                     </div>
                 </div>
 

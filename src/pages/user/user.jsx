@@ -135,7 +135,7 @@ const User = (props)=>{
                             <Route path="/user" exact component={DashBoard} />
                         </Switch>
                      
-                   {/* <DashBoard userData={userData} />  */}
+                   
                </div>
                
            </div>

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 import { Link,  useHistory } from 'react-router-dom';
 import axios from 'axios'
 import {apiUrl} from '../../config.json'
@@ -6,11 +7,16 @@ import {apiUrl} from '../../config.json'
 import { CircularProgress } from '@material-ui/core';
 import Footer from '../../components/footer/footer';
 
+//store
+import {login} from '../../store/user'
+
 import './css/login.css'
 
 
 const Login = ()=>{
     const history = useHistory()
+    const {user} = useSelector(state=>state.user)
+    const dispatch = useDispatch()
     
     const [showProgress, setShowProgress] = useState(false)
     const [showErrorMsg, setShowErrorMsg] = useState(null)
@@ -23,7 +29,7 @@ const Login = ()=>{
         const clone = {...data}
         clone[e.currentTarget.name] = e.currentTarget.value
         setData(clone)
-       console.log(data);
+    //    console.log(data);
     }
     const handleSubmit=async (e)=>{
         setShowProgress(true)
@@ -34,8 +40,11 @@ const Login = ()=>{
             
             console.log(response.data);
             if(response.data.status==="success"){
-                localStorage.clear()
-                localStorage.setItem('auth_token', response.data.token)
+                // localStorage.clear()
+                // localStorage.setItem('auth_token', response.data.token)
+                // history.push('/user')
+                dispatch(login(response.data))
+                console.log(user);
                 history.push('/user')
             }
             
