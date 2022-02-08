@@ -26,14 +26,16 @@ const Home = () => {
           icon:'fa-home'
         },
         {
-          label:'login',
-          target:'/login',
-          icon:'fa-user-o'
+          label:'Features',
+          target:'/#features',
+          icon:'fa-user-o',
+          hash:true
         },
         {
-          label:'About',
-          target:'/about',
-          icon:'fa-address-book'
+          label:'Services',
+          target:'/#services',
+          icon:'fa-address-book',
+          hash:true
         },
         {
           label:'SignUp',

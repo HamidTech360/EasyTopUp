@@ -5,7 +5,7 @@ import '../css/services.css'
 
 const Services = () => {
     return ( 
-        <div className="services text-center">
+        <div className="services text-center" id="services">
             <div className="service-header">Services we provide</div>
             <div className="row service-grid">
                 <div className="col-lg-4 col-md-5 col-sm-12 col-xs-12">

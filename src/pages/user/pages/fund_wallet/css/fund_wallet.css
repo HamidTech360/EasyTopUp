@@ -1,7 +1,14 @@
 .btn-wallet-submit{
     background-color: rgb(39, 11, 39);
     color: whitesmoke;
+    width: 100%;
 }
 .btn-wallet-submit:hover{
     color: whitesmoke;
+}
+.form-label{
+    font-size: 14px;
+}
+.alert-danger{
+    font-size: 13px;
 }

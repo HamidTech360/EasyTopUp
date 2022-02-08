@@ -1,22 +1,21 @@
 import React, {useState} from 'react'
-import { useSelector, useDispatch } from 'react-redux';
-import { Link,  useHistory } from 'react-router-dom';
+import { Link,   useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import {apiUrl} from '../../config.json'
 
 import { CircularProgress } from '@material-ui/core';
 import Footer from '../../components/footer/footer';
 
-//store
-import {login} from '../../store/user'
+
 
 import './css/login.css'
 
 
 const Login = ()=>{
-    const history = useHistory()
-    const {user} = useSelector(state=>state.user)
-    const dispatch = useDispatch()
+    // const history = useHistory()
+    const navigate = useNavigate()
+    // const {user} = useSelector(state=>state.user)
+    // const dispatch = useDispatch()
     
     const [showProgress, setShowProgress] = useState(false)
     const [showErrorMsg, setShowErrorMsg] = useState(null)
@@ -43,9 +42,10 @@ const Login = ()=>{
                 // localStorage.clear()
                 // localStorage.setItem('auth_token', response.data.token)
                 // history.push('/user')
-                dispatch(login(response.data))
-                console.log(user);
-                history.push('/user')
+                // dispatch(login(response.data))
+                // console.log(user);
+                localStorage.setItem('auth_token', response.data.token)
+                navigate('/user')
             }
             
 

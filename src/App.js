@@ -1,6 +1,6 @@
 import React from 'react'
 import {Provider} from 'react-redux'
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Routes } from 'react-router-dom';
 import Home from './pages/home/home';
 import SignUp from './pages/signUp/signup';
 import Login from './pages/login/login';
@@ -14,12 +14,12 @@ function App() {
     <Provider store={store} >
       <BrowserRouter>
         <ScrollToTop/>
-        <Switch>
-          <Route path="/user" component={User}/>
-          <Route path="/login" component={Login}/>
-          <Route path="/signup" component={SignUp}/>
-          <Route path="/" component={Home}/>
-        </Switch>
+        <Routes>
+          <Route path="/user/*" element={<User/>}/>
+          <Route path="/login" element={ <Login/> }/>
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/" element={<Home/>}/>
+        </Routes>
       </BrowserRouter>
     </Provider>
   );

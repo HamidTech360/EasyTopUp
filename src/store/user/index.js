@@ -10,7 +10,7 @@ export const userSlice = createSlice({
             console.log('login dispatched');
             // alert('redux')
             state.user = action.payload
-            // console.log(state.user);
+            console.log(state.user);
 
         }
     }

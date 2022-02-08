@@ -1,11 +1,14 @@
 import React from 'react'
 import { NavLink} from 'react-router-dom';
+import {HashLink} from 'react-router-hash-link'
 import SwipeableSideNav from './swipeable-side-nav';
+import GraphicEqIcon from '@material-ui/icons/GraphicEq';
+
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle'
-import GraphicEqIcon from '@material-ui/icons/GraphicEq';
 import 'font-awesome/css/font-awesome.css';
 import './header.css'
+
 const Header = (props)=>{
 
     return(
@@ -29,13 +32,13 @@ const Header = (props)=>{
                                     <li className="nav-item">Home</li>
                                 </NavLink>
                                         
-                                 <NavLink className="nav-link" id="nav-2" to="/service">
+                                 <HashLink className="nav-link" id="nav-2" to="/#services">
                                      <li className="nav-item">Services</li>
-                                </NavLink>
+                                </HashLink>
                            
-                                 <NavLink className="nav-link " id="nav-3" to="/features" >
+                                 <HashLink className="nav-link " id="nav-3" to="/#features" >
                                      <li className="nav-item">Features</li>
-                                 </NavLink>
+                                 </HashLink>
 
                                  <NavLink className="nav-link " id="nav-3" to="/signup" >
                                      <li className="nav-item">Sign up</li>

@@ -12,7 +12,7 @@ import './css/sidenav.css'
 
 const useStyles = makeStyles({
   paper:{
-    background:'rgb(39, 11, 39)',
+    background:'#2b044d',
     paddingTop:'30px',
     width:'200px',
     border:'1px solid rgba(255, 255, 255, 0.21)'

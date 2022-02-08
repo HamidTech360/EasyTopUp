@@ -7,7 +7,7 @@ import '../css/features.css'
 
 const Features = () => {
     return ( 
-        <div className="features">
+        <div className="features" id="features">
             <div className="feature-bold">Some of the amazing features of the app</div>
             <div className="row feature-grid">
                <div className="col-lg-6 col-md-6 col-sm-12 col-x-12 feature-card-grid">

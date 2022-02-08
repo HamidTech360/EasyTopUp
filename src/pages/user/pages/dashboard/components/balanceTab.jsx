@@ -32,7 +32,7 @@ const BalanceTab = () => {
         </div>
                     
         <div className="col-6 colored_box_text">
-            <span className="balance-value pull-right">#{userData.balance}</span>
+            <span className="balance-value pull-right">#{user?.data.walletBalance} </span>
         </div>
 
         <div className="col-6">
@@ -42,7 +42,7 @@ const BalanceTab = () => {
         </div>
         
         <div className="col-6 colored_box_text">
-            <span className="balance-value pull-right">#0.00</span>
+            <span className="balance-value pull-right">#{user?.data.referralBonus}</span>
         </div>
     </div>
      );

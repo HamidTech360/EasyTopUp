@@ -1,14 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import clsx from 'clsx';
+import {HashLink} from 'react-router-hash-link'
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+
+
 import './header.css'
 
 
@@ -72,15 +71,19 @@ const SwipeableSideNav = (props)=>{
 
             {props.options.map((text, index) => (
               
-                <Link key={index} to={text.target} style={{textDecoration:'none', color:'black'}}>
-                  <div className="home-side-navs">
-                      <span className="home-nav-icon"><i className={`fa ${text.icon} dynamic_icons`}></i></span>
-                      <span className="home-nav-item"><span>{text.label}</span></span>
-                  </div> 
-                    
-                    
-                    <Divider />
-                  </Link>
+               text.hash?
+               <HashLink key={index} to={text.target} style={{textDecoration:'none', color:'black'}}>
+               <div className="home-side-navs">
+                   <span className="home-nav-icon"><i className={`fa ${text.icon} dynamic_icons`}></i></span>
+                   <span className="home-nav-item"><span>{text.label}</span></span>
+               </div> 
+             </HashLink>:
+              <Link key={index} to={text.target} style={{textDecoration:'none', color:'black'}}>
+              <div className="home-side-navs">
+                  <span className="home-nav-icon"><i className={`fa ${text.icon} dynamic_icons`}></i></span>
+                  <span className="home-nav-item"><span>{text.label}</span></span>
+              </div> 
+            </Link>
              
             ))}
           </List>

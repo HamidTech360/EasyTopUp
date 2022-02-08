@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link, useHistory} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { CircularProgress } from '@material-ui/core'
 import axios from 'axios'
 import {apiUrl} from '../../config.json'
@@ -11,7 +11,7 @@ import './css/signup.css'
 
 const SignUp= ()=>{
 
-    const history = useHistory()
+    // const history = useHistory()
 
     const [showProgress, setShowProgress] = useState(false)
     const [showErrorMsg, setShowErrorMsg] = useState(null)

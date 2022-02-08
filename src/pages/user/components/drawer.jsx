@@ -14,7 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 const useStyles = makeStyles({
     paper:{
-      background:' rgb(9, 9, 26)',
+      background:'#2b044d',
       paddingTop:'30px',
       width:'240px',
       border:'1px solid rgba(255, 255, 255, 0.21)'

@@ -1,0 +1,17 @@
+.success-logo{
+    height: 100px;
+    width: 100px;
+}
+.success-box{
+    max-width: 500px;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    padding: 50px;
+    
+}
+.success-text{
+    color: green;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+}
