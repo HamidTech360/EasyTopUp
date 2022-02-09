@@ -27,6 +27,7 @@ const VerifyPayment = ()=>{
         VerifyPayment()
      }catch(ex){
          alert(ex.response?.data);
+        //  navigate('/user')
      }
 
     },[])

@@ -3,3 +3,9 @@
     padding-bottom: 70px;
     margin-left: 60px;
 }
+
+@media screen and (max-width:768px) {
+    .dashboard{
+        margin-left: unset;
+    }
+}
