@@ -18,7 +18,7 @@ import DashBoard from './pages/dashboard/dashboard'
 import Fund_wallet from './pages/fund_wallet/fund_wallet'
 import Data from './pages/data/data'
 import Airtime from './pages/airtime/airtime'
-import PaymentVerification from './pages/payment_verification'
+import PaymentVerification from './pages/payment_verification/verify'
 
 //styles
 import './css/user.css'
