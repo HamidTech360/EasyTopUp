@@ -58,10 +58,10 @@ const Login = ()=>{
 
     }
     
-        // const {email, password} = this.state.data
+
         return(
             <>
-                       <div className="signUp_wrapper container" id="login_wrapper">
+        <div className="signUp_wrapper container" id="login_wrapper">
             
             <div className="signup-form-box">
                 <div className="bold-text signup_heading text-center">

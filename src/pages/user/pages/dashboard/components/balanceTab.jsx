@@ -4,10 +4,7 @@ import { useSelector } from 'react-redux';
 import '../css/balance-tab.css'
 
 const BalanceTab = () => {
-    const [userData, setUserData] = useState({
-        firstName:"Hamid",
-        balance:'20000'
-    })
+ 
     const {user} = useSelector(state=>state.user)
     console.log(user);
     return ( 

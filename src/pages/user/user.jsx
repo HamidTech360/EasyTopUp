@@ -1,5 +1,5 @@
 import React, { useEffect, useState  } from 'react'
-import {  Routes,Route } from 'react-router-dom'
+import {  Routes,Route, useNavigate } from 'react-router-dom'
 import {  useDispatch } from 'react-redux';
 import {apiUrl} from '../../config.json'
 import axios from 'axios'
@@ -26,7 +26,7 @@ import './css/user.css'
 
 
 const User = (props)=>{
-    
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const NavOptions = [
         {
@@ -65,7 +65,7 @@ const User = (props)=>{
       useEffect(()=>{
 
         const token = localStorage.getItem('auth_token')
-        // console.log(token);
+        if(!token) navigate('/login')
         async function getUserData (){
             try{
                 const response = await axios.get(`${apiUrl}/user`,{headers:{

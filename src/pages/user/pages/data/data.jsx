@@ -1,122 +1,85 @@
-import React,{Component} from 'react'
-// import AlertDialog from '../dialog/dialog'
-// import '../signUp/css/signup.css'
-// import axios from 'axios'
+import React,{useEffect, useState} from 'react'
+import {useDispatch} from 'react-redux'
+import axios from 'axios'
+import {apiUrl} from '../../../../config.json'
+import {CircularProgress} from '@material-ui/core'
+
+//store
+import {login} from '../../../../store/user'
+
+
 // import {apiUrl} from '../../config.json'
+import AlertDialog from '../../../../components/dialog/dialog'
+
 
 
 
 const Data = ()=> {
+    const dispatch = useDispatch()
+    const token = localStorage.getItem('auth_token')
+    const [showErrorMsg, setShowErrMsg] = useState(null)
+    const [showSuccessMsg, setShowSuccessMsg] = useState(null)
+    const [showProgress, setShowProgress] = useState(false)
+    const [showDialogMsg, setShowDialogMsg] = useState(false)
+    const [apiResponse, setApiResponse] = useState([])
+    const [data, setData]= useState({
+        mobile_number:'',
+        network:'',
+        plan:''
+    })
 
- 
-    // const [variatin_code, setVariation_code] = useState([])
-    // const[data, setData] = useState({
-    //     dataItems:{
-    //         network:'',
-    //         plan:'',
-    //         phone_no:''
-    //     }
-    // })
-    // state ={
-    //     data:{
-    //         network:'',
-    //         plan:'',
-    //         phone_no:''
-    //     },
-    //     varaitions:[],
-    //     openDialog:false,
-    //     dialogMessage:'',
-    //     amounts:[]
-    // }
-    // async componentDidMount() {
-    //     try{
-           
-    //             const response = await axios.get(`${apiUrl}/mtnvariation.php`)
-    //             console.log(response.data.content.varations);
-                
-
-    //             const responseAirtel =  await axios.get(`${apiUrl}/airtelvariations.php`)
-    //             console.log(responseAirtel.data.content.varations);
-
-    //             const responseGlo =  await axios.get(`${apiUrl}/glovariations.php`)
-    //             console.log(responseGlo.data.content.varations);
-
-    //             this.setState({varaitions:[...response.data.content.varations, ...responseAirtel.data.content.varations, ...responseGlo.data.content.varations]})
-
-            
-    //     }catch(error){
-    //         alert('Please check your Internet connection')
-    //     }
-
-    //   }
-
+    useEffect(()=>{
+        async function getPlans (){
+            try{
+                const response = await axios.get(`${apiUrl}/vtu/data`)
+                console.log(response.data);
+                setApiResponse(response.data)
+            }catch(ex){
+                console.log('Can"t fetch data plans. Network error');
+            }
+        }
+        getPlans()
+    },[])
       const handleClose = () => {
         // this.setState({openDialog:false});
       }
 
      const handleChange = (e)=>{
-        //   const data = {...this.state.data}
-        //   data[e.currentTarget.name] = e.currentTarget.value
-        //   this.setState({data})
-        //   console.log(this.state.data);
+        const clone = {...data}
+        clone[e.currentTarget.name] = e.currentTarget.value
+        setData(clone)
+        //console.log(data);
           
       }
   
       const handleSubmit = async (e)=>{
-            // e.preventDefault()
-            // const email = localStorage.getItem('userEmail')
-            // const getamount = this.state.varaitions.filter(el=>el.variation_code== this.state.data.plan)
-            // const dataAmount = getamount[0].variation_amount
-            // this.setState({
-            //     openDialog:true,
-            //     dialogMessage:'YOUR REQUEST IS BEING PROCESSED...',
-            //     type:"green"
-            // })
-            // try{
-            //     const response = await axios.post(
-            //         `${apiUrl}/data.php`,
-            //         {...this.state.data, email, dataAmount},
-            //         {headers:{
-            //             'content-type':'application/json'
-            //         }}
-            //     )
-                
-            // if(response.data.status=="TRANSACTION SUCCESSFUL"){
-            //     console.log('success');
-            //     this.setState({
-            //         openDialog:true,
-            //         dialogMessage:'Your line has been recharged successfully',
-            //         type:"green"
-            //     })
-            // }else if(response.data.status=='low_fund'){
-            //     this.setState({
-            //         openDialog:true,
-            //         dialogMessage:'Insufficient fund to process your REQUEST.... Please Fund your wallet',
-            //         type:"red"
-            //     })
-            // }
-            // else{
-            //     console.log('failed');
-            //     this.setState({
-            //         openDialog:true,
-            //         dialogMessage:'Failed to recharge your line',
-            //         type:"red"
-            //     })
-            // }
-            //    // console.log(response);
-            // }catch(error){
-            //     alert('please check your internwt connection')
-            // }
+        setShowDialogMsg(true)
+        setShowProgress(true)
+        try{
+            const response = await axios.post(`${apiUrl}/vtu/data`, data, {
+                headers:{
+                    'Authorization':token
+                }
+            })
+            console.log(response.data);
+
+        }catch(ex){
+            console.log((ex?.response.data));
+            setShowProgress(false)
+            setShowDialogMsg(false)
+            setShowErrMsg(ex?.response.data)
+        }
       }
       
         return(
             <React.Fragment>
-                 {/* <AlertDialog
-                handleClose ={this.handleClose}
-                appear= {this.state.openDialog}
-                dialogMessage={this.state.dialogMessage}
-                type={this.state.type}
-            /> */}
+              {showDialogMsg?
+              <AlertDialog
+                handleClose ={handleClose}
+                appear= {showDialogMsg}
+                dialogMessage={'Your Transaction is being processed'}
+                type={''}
+              /> :''}
                 <div className="signUp_wrapper container">
                  
                 <div className="signup-form-box">
@@ -126,15 +89,16 @@ const Data = ()=> {
                     <div className="airtimeText">
     
                     </div>
-                     <form onSubmit={(e)=>this.handleSubmit(e)}>
+                     
                       
                          <div className="mb-3">
                             <label htmlFor="network" className="form-label">Network</label>
-                            <select onChange={(e)=>handleChange(e)}  type="email" name="network" className="form-control" id="exampleInputEmail1">
+                            <select onChange={(e)=>handleChange(e)}   name="network" className="form-control" id="exampleInputEmail1">
                                 <option value="">please select</option>
-                                <option value="mtn-data">MTN</option>
-                                <option value="glo-data">GLO</option>
-                                <option value="airtel-data">Airtel</option>
+                                <option value="1">MTN</option>
+                                <option value="2">GLO</option>
+                                <option value="3">9MOBILE</option>
+                                <option value="4">Airtel</option>
                                
                             </select>
                         </div>
@@ -143,13 +107,41 @@ const Data = ()=> {
                             <label htmlFor="network" className="form-label">Data plan</label>
                             <select onChange={(e)=>handleChange(e)}  type="email" name="plan" className="form-control" id="exampleInputEmail1">
                                 <option value="">please select a plan</option>
-                                {/* {this.state.varaitions.map((option, i)=> <option onSelect={(e)=>this.getAmount(e)} key={i} amount={option.variation_amount} value={option.variation_code}>{option.name}</option>)} */}
+                                {apiResponse.MTN_PLAN?.map((item, i)=>
+                                    <option key={i} value={item.dataplan_id}> 
+                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
+                                    </option>
+                                )}
+                                {apiResponse.GLO_PLAN?.map((item, i)=>
+                                    <option key={i} value={item.dataplan_id}> 
+                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
+                                    </option>
+                                )}
+
+                                {apiResponse.AIRTEL_PLAN?.map((item, i)=>
+                                    <option key={i} value={item.dataplan_id}> 
+                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
+                                    </option>
+                                )}
+                                {apiResponse['9MOBILE_PLAN']?.map((item, i)=>
+                                    <option key={i} value={item.dataplan_id}> 
+                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
+                                    </option>
+                                )}
+                               
                             </select>
                         </div>
     
                         <div className="mb-3">
                             <label htmlFor="phone Number" className="form-label">Phone Number</label>
-                            <input onChange={(e)=>handleChange(e)}  type="number" name="phone_no" className="form-control" id="exampleInputPassword1"/>
+                            <input 
+                                onChange={(e)=>handleChange(e)}  
+                                type="number" 
+                                name="mobile_number" 
+                                className="form-control" 
+                                id="exampleInputPassword1"
+
+                            />
                         </div>
                         
     
@@ -160,8 +152,14 @@ const Data = ()=> {
                             <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                             <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                         </div>
-                        <button type="submit" className="btn btn-wallet-submit form-control">Proceed</button>
-                    </form>
+
+                        {showErrorMsg?<div className="alert alert-danger">{showErrorMsg}</div>:''}
+                        {showSuccessMsg?<div className="alert alert-success">{showSuccessMsg}</div>:''} 
+
+                        <button type="submit" onClick={()=>handleSubmit()} className="btn btn-wallet-submit">
+                            {showProgress?<CircularProgress size={27} />:"Proceed"}
+                        </button>
+                
                 </div>
             </div >
             </React.Fragment>
