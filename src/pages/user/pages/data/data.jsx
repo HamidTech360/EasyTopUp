@@ -4,6 +4,9 @@ import axios from 'axios'
 import {apiUrl} from '../../../../config.json'
 import {CircularProgress} from '@material-ui/core'
 
+//custom components
+import SimpleBackdrop from '../../../../components/backdrop/backdrop'
+
 //store
 import {login} from '../../../../store/user'
 
@@ -17,6 +20,7 @@ import AlertDialog from '../../../../components/dialog/dialog'
 const Data = ()=> {
     const dispatch = useDispatch()
     const token = localStorage.getItem('auth_token')
+    const [open, setOpen] = useState(true)
     const [showErrorMsg, setShowErrMsg] = useState(null)
     const [showSuccessMsg, setShowSuccessMsg] = useState(null)
     const [showProgress, setShowProgress] = useState(false)
@@ -33,6 +37,9 @@ const Data = ()=> {
             try{
                 const response = await axios.get(`${apiUrl}/vtu/data`)
                 console.log(response.data);
+                if(response.data){
+                    setOpen(false)
+                }
                 setApiResponse(response.data)
             }catch(ex){
                 console.log('Can"t fetch data plans. Network error');
@@ -48,13 +55,14 @@ const Data = ()=> {
         const clone = {...data}
         clone[e.currentTarget.name] = e.currentTarget.value
         setData(clone)
-        //console.log(data);
+        console.log(data);
           
       }
   
       const handleSubmit = async (e)=>{
         setShowDialogMsg(true)
         setShowProgress(true)
+      
         try{
             const response = await axios.post(`${apiUrl}/vtu/data`, data, {
                 headers:{
@@ -62,6 +70,8 @@ const Data = ()=> {
                 }
             })
             console.log(response.data);
+            setShowDialogMsg(false)
+            setShowProgress(false)
 
         }catch(ex){
             console.log((ex?.response.data));
@@ -70,7 +80,11 @@ const Data = ()=> {
             setShowErrMsg(ex?.response.data)
         }
       }
-      
+      if(open){
+        return(
+          <SimpleBackdrop open={open} />
+        )
+      }
         return(
             <React.Fragment>
               {showDialogMsg?
@@ -108,23 +122,23 @@ const Data = ()=> {
                             <select onChange={(e)=>handleChange(e)}  type="email" name="plan" className="form-control" id="exampleInputEmail1">
                                 <option value="">please select a plan</option>
                                 {apiResponse.MTN_PLAN?.map((item, i)=>
-                                    <option key={i} value={item.dataplan_id}> 
+                                    <option key={i} value={`${item.dataplan_id}-${item.plan_amount}`}> 
                                         {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
                                     </option>
                                 )}
                                 {apiResponse.GLO_PLAN?.map((item, i)=>
-                                    <option key={i} value={item.dataplan_id}> 
+                                    <option key={i} value={`${item.dataplan_id}-${item.plan_amount}`}> 
                                         {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
                                     </option>
                                 )}
 
                                 {apiResponse.AIRTEL_PLAN?.map((item, i)=>
-                                    <option key={i} value={item.dataplan_id}> 
+                                    <option key={i} value={`${item.dataplan_id}-${item.plan_amount}`}> 
                                         {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
                                     </option>
                                 )}
                                 {apiResponse['9MOBILE_PLAN']?.map((item, i)=>
-                                    <option key={i} value={item.dataplan_id}> 
+                                    <option key={i} value={`${item.dataplan_id}-${item.plan_amount}`}> 
                                         {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
                                     </option>
                                 )}

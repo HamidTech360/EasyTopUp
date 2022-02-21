@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import axios from 'axios'
 import {apiUrl} from '../../../../config.json'
-
 import {CircularProgress} from '@material-ui/core'
 
+//custom components
+import SimpleBackdrop from '../../../../components/backdrop/backdrop'
 
 //store
 import {login} from '../../../../store/user'
@@ -19,6 +20,7 @@ import AlertDialog from '../../../../components/dialog/dialog'
 const Airtime = ()=>{
     const dispatch = useDispatch()
     const token = localStorage.getItem('auth_token')
+    const [open, setOpen] = useState(true)
     const [showErrorMsg, setShowErrMsg] = useState(null)
     const [showSuccessMsg, setShowSuccessMsg] = useState(null)
     const [showProgress, setShowProgress] = useState(false)
@@ -35,6 +37,9 @@ const Airtime = ()=>{
         try{
             async function getNetworkData (){
                 const response = await axios.get(`${apiUrl}/vtu`)
+                if(response.data){
+                    setOpen(false)
+                }
                 console.log(response.data);
                 setApiResponse(response.data)
             }
@@ -77,6 +82,12 @@ const Airtime = ()=>{
             console.log(ex.response?.data);
         }
 
+    }
+
+    if(open){
+        return(
+          <SimpleBackdrop open={open} />
+        )
     }
   
     return(

@@ -11,6 +11,7 @@ import {login} from '../../store/user'
 import SideNav from './components/sidenav'
 import SwipeableSideNav from './components/drawer'
 import Page_Header from './components/page-header'
+import SimpleBackdrop from '../../components/backdrop/backdrop';
 
 
 //Pages
@@ -19,6 +20,8 @@ import Fund_wallet from './pages/fund_wallet/fund_wallet'
 import Data from './pages/data/data'
 import Airtime from './pages/airtime/airtime'
 import PaymentVerification from './pages/payment_verification/verify'
+import PaymentHistory from './pages/payment_history/payment';
+import VtuHistory from './pages/vtu_history/vtu_history'
 
 //styles
 import './css/user.css'
@@ -28,6 +31,7 @@ import './css/user.css'
 const User = (props)=>{
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const [open, setOpen] = useState(true)
     const NavOptions = [
         {
           label:'Dashboard',
@@ -51,13 +55,8 @@ const User = (props)=>{
         },
         {
           label:'Electricity Bill',
-          target:'/user/electricity',
+          target:'/user/#',
           icon:'fa-podcast'
-        },
-        {
-          label:'Logout',
-          target:'/logout',
-          icon:'fa-user-times'
         }
       ]
     
@@ -72,6 +71,7 @@ const User = (props)=>{
                     'Authorization':token
                 }})
                 console.log(response.data);
+                if(response.data) setOpen(false)
                 dispatch(login(response.data))
             }catch(ex){
 
@@ -81,7 +81,11 @@ const User = (props)=>{
             
       }, [])
 
-    
+      if(open){
+        return(
+          <SimpleBackdrop open={open} />
+        )
+      }
 
     return(
         <div className="profile_wrapper">
@@ -112,6 +116,8 @@ const User = (props)=>{
                             <Route path="/data"  element={<Data/>} />
                             <Route path="/airtime"  element={<Airtime/>} />
                             <Route path="/fund_wallet"  element={<Fund_wallet/>} />
+                            <Route path="/payment_history"  element={<PaymentHistory/>} />
+                            <Route path="/vtu_history"  element={<VtuHistory/>} />
                             <Route path="/"  element={<DashBoard/>} />
                         </Routes>
                      

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core'
 import { Toolbar } from '@material-ui/core'
 import { Drawer } from '@material-ui/core'
@@ -22,11 +22,14 @@ const useStyles = makeStyles({
 
 const SideNav = ({NavOptions})=>{
     const styles = useStyles()
+    const navigate = useNavigate()
 
+    const LogOut = ()=>{
+        localStorage.clear()
+        navigate('/')
+    }
     return(
 
-        
-      
         <Drawer
             sx={{
             width: 240,
@@ -59,7 +62,13 @@ const SideNav = ({NavOptions})=>{
                             <span className="list-item-text">{item.label}</span>
                         </div>
                    </Link>
+                   
                 ))}
+
+                <div className="list-item dash-list-item" style={{ paddingLeft:'50px'}} onClick={()=>LogOut()}>
+                    <span className="list-item-icon"> <i className={`fa fa-user-times fa-1x`}></i> </span>
+                    <span className="list-item-text">LogOut</span>
+                </div>
                 </List>
                 <div className="fixed-logout">Logout</div>
             </Drawer>

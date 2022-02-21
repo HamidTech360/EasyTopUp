@@ -1,0 +1,39 @@
+.statistics{
+    margin-top: 20px;
+}
+.stat-grid{
+    background-color: #8965a8;;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    border-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 30px;
+    margin-left: 14px;
+}
+.stat-grid-bold-text{
+    font-weight: 800;
+    font-size: 18px;
+}
+.stat-grid-item{
+    background-color: white;
+    margin-right: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.stat-grid-text{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+.stat-amount{
+    margin-top: 10px;
+    font-size: 15px;
+}

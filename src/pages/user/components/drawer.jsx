@@ -1,14 +1,11 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+
  import './css/drawer.css'
 
 
@@ -25,6 +22,7 @@ const useStyles = makeStyles({
 
 const SwipeableSideNav = (props)=>{
 
+    const navigate = useNavigate()
     const styles = useStyles()
    
 
@@ -34,7 +32,10 @@ const SwipeableSideNav = (props)=>{
         left:false
       });
 
-
+    const LogOut = ()=>{
+      localStorage.clear()
+      navigate('/')
+    }
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -85,6 +86,11 @@ const SwipeableSideNav = (props)=>{
                 </Link>
              
             ))}
+
+                  <div className="drawer-list"  style={{textDecoration:'none', color:'whitesmoke'}} onClick={()=>LogOut()}>
+                        <span className="drawer-icon"><i className={`fa fa-user-times`}></i> </span>
+                        <span className="drawer-label">LogOut</span>
+                  </div>    
           </List>
      
         </div> 

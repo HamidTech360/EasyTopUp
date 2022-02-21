@@ -39,11 +39,7 @@ const Login = ()=>{
             
             console.log(response.data);
             if(response.data.status==="success"){
-                // localStorage.clear()
-                // localStorage.setItem('auth_token', response.data.token)
-                // history.push('/user')
-                // dispatch(login(response.data))
-                // console.log(user);
+                localStorage.clear()
                 localStorage.setItem('auth_token', response.data.token)
                 navigate('/user')
             }

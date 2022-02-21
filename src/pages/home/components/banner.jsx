@@ -13,8 +13,7 @@ const Banner1 = () => {
                         Get Automated  Virtual TopUp with EasyTOpUp
                     </div>
                     <div className="banner1-medium-text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, ea.
-                         Molestias dolores adipisci aliquam qui voluptate, 
+                        Here at EASYTOPUP, we offer you the most affordable and most cheapest data, airtime, and other VTu services 
                     </div>
                     <div className="banner1-btns">
                         <Link to="/signup"><button className="banner1-btn-join">Register now </button></Link>

@@ -5,6 +5,7 @@ import BalanceTab from './components/balanceTab';
 import QuickLinks from './components/quicklinks';
 import TransactionTabs from  './components/transactions_tabs'
 import Review from './components/review';
+import Statistics from './components/stat';
 
 import './css/dashboard.css'
 
@@ -15,6 +16,7 @@ const DashBoard = ({}) => {
        {!user?.data.isVerified?<div className="alert alert-warning text-center">Please verify your account from your email</div>:''} 
          <BalanceTab/>
         <TransactionTabs/>
+        <Statistics/>
         <QuickLinks/>
         <Review/>
         <a href="https://wa.me/+2347015713905">

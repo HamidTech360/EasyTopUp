@@ -1,11 +1,11 @@
 body{
-    
+    overflow-x: hidden;
     font-family: 'Nunito', sans-serif;
 }
 .fixed-whatsap-btn{
     position: fixed;
     top: 90%;
-    left: 5%;
+    left: 80%;
     border-radius: 50%;
    padding: 10px;
    padding-left: 12px;

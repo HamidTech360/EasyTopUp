@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import '../css/balance-tab.css'
@@ -14,12 +15,14 @@ const BalanceTab = () => {
                    <span className="user-img-span">
                         <img src="../../../../assets/avatar.png" className="avatar_profile_img" alt="" />    
                    </span>
-                    <span className="user-name">{user?.data.lastName|| 'Hamid'}</span>
+                    <span className="user-name">{user?.data.lastName|| 'Unknown'}</span>
              </div>
         </div>
         
          <div className="col-6">
-            <button className="btn btn-light btn-fund-wallet pull-right">Fund Wallet</button>
+            <Link to="/user/fund_wallet">
+                <button className="btn btn-light btn-fund-wallet pull-right">Fund Wallet</button>
+            </Link>
         </div>
 
         <div className="col-6">
@@ -29,7 +32,7 @@ const BalanceTab = () => {
         </div>
                     
         <div className="col-6 colored_box_text">
-            <span className="balance-value pull-right">#{user?.data.walletBalance} </span>
+            <span className="balance-value pull-right">&#8358;{user?.data.walletBalance} </span>
         </div>
 
         <div className="col-6">
@@ -39,7 +42,7 @@ const BalanceTab = () => {
         </div>
         
         <div className="col-6 colored_box_text">
-            <span className="balance-value pull-right">#{user?.data.referralBonus}</span>
+            <span className="balance-value pull-right">&#8358;{user?.data.referralBonus}</span>
         </div>
     </div>
      );
