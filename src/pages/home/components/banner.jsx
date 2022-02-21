@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import '../css/banner1.css'
 
@@ -16,7 +17,7 @@ const Banner1 = () => {
                          Molestias dolores adipisci aliquam qui voluptate, 
                     </div>
                     <div className="banner1-btns">
-                        <button className="banner1-btn-join">Register now </button>
+                        <Link to="/signup"><button className="banner1-btn-join">Register now </button></Link>
                     </div>
                 </div>
 

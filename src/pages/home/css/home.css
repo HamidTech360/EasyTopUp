@@ -2,3 +2,18 @@ body{
     
     font-family: 'Nunito', sans-serif;
 }
+.fixed-whatsap-btn{
+    position: fixed;
+    top: 90%;
+    left: 5%;
+    border-radius: 50%;
+   padding: 10px;
+   padding-left: 12px;
+   padding-right: 12px;
+   background-color: #50c24a;
+   border: 2px solid #50c24a;
+   color: white;
+}
+.fixed-whatsap-btn-right{
+    left: 80%;
+}

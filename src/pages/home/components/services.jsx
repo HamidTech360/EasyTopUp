@@ -27,9 +27,9 @@ const Services = () => {
                 <div className="col-lg-4 col-md-5 col-sm-12 col-xs-12">
                     <ServiceCard
                         fabColor="#E88CEA"
-                        icon="fa-credit-card"
-                        headerText="Airtime to Cash"
-                        lightText="We offer this service at a very affordable rate. please login to get your current conversio rate"
+                        icon="fa-code"
+                        headerText="Web Development"
+                        lightText="Own a Virtul topUp website to digitalize your buisness. We also develop non VTU websites at affordable rate"
                     />
                 </div>
                 <div className="col-lg-4 col-md-5 col-sm-12 col-xs-12">

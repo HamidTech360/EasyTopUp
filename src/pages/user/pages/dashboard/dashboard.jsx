@@ -17,6 +17,11 @@ const DashBoard = ({}) => {
         <TransactionTabs/>
         <QuickLinks/>
         <Review/>
+        <a href="https://wa.me/+2347015713905">
+          <button className="fixed-whatsap-btn fixed-whatsap-btn-right">
+            <i className="fa fa-whatsapp fa-2x"></i>
+          </button>
+        </a>
      </div>
 
      );

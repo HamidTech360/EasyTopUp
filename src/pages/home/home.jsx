@@ -28,7 +28,7 @@ const Home = () => {
         {
           label:'Features',
           target:'/#features',
-          icon:'fa-user-o',
+          icon:'fa-podcast',
           hash:true
         },
         {
@@ -38,9 +38,9 @@ const Home = () => {
           hash:true
         },
         {
-          label:'SignUp',
-          target:'/signup',
-          icon:'fa-envelope-open'
+          label:'Sign In',
+          target:'/login',
+          icon:'fa-user'
         },
         
       ]
@@ -59,6 +59,11 @@ const Home = () => {
             <Services/>
             <WhyUs/>
             <Footer/>
+            <a href="https://wa.me/+2347015713905">
+            <button className="fixed-whatsap-btn">
+                <i className="fa fa-whatsapp fa-2x"></i>
+            </button>
+            </a>
         </div>
      );
 }
