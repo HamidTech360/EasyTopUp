@@ -28,8 +28,8 @@ const Statistics = () => {
             <div className="stat-grid row">
                 <div className="stat-grid-item col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div className="stat-grid-icons">
-                        <Fab style={{backgroundColor:'#2b044d', color:'whitesmoke'}}>
-                            <i className="fa fa-pie-chart fa-2x"></i>
+                        <Fab style={{backgroundColor:'#2b044d', color:'whitesmoke', height:'50px', width:'50px'}}>
+                            <i className="fa fa-pie-chart fa-1x"></i>
                         </Fab>
                     </div>
                     <div className="stat-grid-text">
@@ -40,8 +40,8 @@ const Statistics = () => {
 
                 <div className="stat-grid-item col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div className="stat-grid-icons">
-                        <Fab style={{backgroundColor:'#2b044d', color:'whitesmoke'}}>
-                            <i className="fa fa-signal fa-2x"></i>
+                        <Fab style={{backgroundColor:'#2b044d', color:'whitesmoke',height:'50px', width:'50px'}}>
+                            <i className="fa fa-signal fa-1x"></i>
                         </Fab>
                     </div>
                     <div className="stat-grid-text">
@@ -52,8 +52,8 @@ const Statistics = () => {
 
                 <div className="stat-grid-item col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div className="stat-grid-icons">
-                        <Fab style={{backgroundColor:'#2b044d', color:'whitesmoke'}}>
-                            <i className="fa fa-bar-chart fa-2x"></i>
+                        <Fab style={{backgroundColor:'#2b044d', color:'whitesmoke', height:'50px', width:'50px'}}>
+                            <i className="fa fa-bar-chart fa-1x"></i>
                         </Fab>
                     </div>
                     <div className="stat-grid-text">
