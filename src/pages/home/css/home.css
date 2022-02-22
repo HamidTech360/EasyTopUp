@@ -1,5 +1,5 @@
 body{
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-family: 'Nunito', sans-serif;
 }
 .fixed-whatsap-btn{
@@ -16,4 +16,10 @@ body{
 }
 .fixed-whatsap-btn-right{
     left: 80%;
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x:hidden;
+    }
 }

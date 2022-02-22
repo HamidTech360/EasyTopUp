@@ -1,8 +1,17 @@
 .statistics{
     margin-top: 20px;
+    background-color: #8965a8;
+    padding-top:20px;
+    border-radius: 5px;
+}
+.stat-header{
+    color:rgb(172, 30, 30);
+    margin-left:20px;
+    font-weight:800;
+    font-size: 20px;
 }
 .stat-grid{
-    background-color: #8965a8;;
+    
     /* display: flex;
     flex-direction: row;
     flex-wrap: wrap; */
@@ -13,10 +22,12 @@
     padding-left: 20px;
     padding-right: 30px;
     margin-left: 14px;
+    margin-right:14px;
 }
 .stat-grid-bold-text{
-    font-weight: 800;
+    font-weight: 500;
     font-size: 18px;
+    color: rgb(71, 64, 64);
 }
 .stat-grid-item{
     background-color: white;

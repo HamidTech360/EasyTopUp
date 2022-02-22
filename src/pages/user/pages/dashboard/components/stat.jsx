@@ -14,7 +14,8 @@ const Statistics = () => {
                 const response = await axios.get(`${apiUrl}/vtu/stats`, {headers:{
                     'Authorization':token
                 }})
-                console.log(response.data);
+               // console.log(response.data);
+                setData(response.data.data)
             }catch(ex){
                 console.log(ex.response?.data)
             }
@@ -23,6 +24,7 @@ const Statistics = () => {
     })
     return ( 
         <div className="statistics">
+            <div className="stat-header">Transaction Statistics</div>
             <div className="stat-grid row">
                 <div className="stat-grid-item col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div className="stat-grid-icons">
@@ -32,7 +34,7 @@ const Statistics = () => {
                     </div>
                     <div className="stat-grid-text">
                         <div className="stat-grid-bold-text">Total Funding</div>
-                        <div className="stat-amount"> &#8358; 100 </div>
+                        <div className="stat-amount"> &#8358; {data.totalPayment/100} </div>
                     </div>
                 </div>
 
@@ -44,7 +46,7 @@ const Statistics = () => {
                     </div>
                     <div className="stat-grid-text">
                         <div className="stat-grid-bold-text">Total Spent</div>
-                        <div className="stat-amount"> &#8358; 100 </div>
+                        <div className="stat-amount"> &#8358; {data.totalVtu} </div>
                     </div> 
                 </div>
 
@@ -56,7 +58,7 @@ const Statistics = () => {
                     </div>
                     <div className="stat-grid-text">
                         <div className="stat-grid-bold-text">Balance</div>
-                        <div className="stat-amount"> &#8358; 100 </div>
+                        <div className="stat-amount"> &#8358; {data.walletBalance} </div>
                     </div>
                 </div>
             </div>

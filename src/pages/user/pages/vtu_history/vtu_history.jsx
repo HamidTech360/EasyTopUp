@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {apiUrl} from '../../../../config.json'
 import axios from 'axios'
+import moment from 'moment'
 
 //custom components
 import SimpleBackdrop from '../../../../components/backdrop/backdrop'
@@ -51,7 +52,7 @@ const VtuHistory = ()=>{
                         <tr key={i}>
                           <td>NGN {item.amount}</td>
                           <td>{item.type}</td>
-                          <td>{item.updatedAt}</td>
+                          <td>{moment(item.updatedAt).format('LLL')}</td>
                       </tr>
                       )}
                     </tbody>

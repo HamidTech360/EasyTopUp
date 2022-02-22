@@ -32,7 +32,7 @@ const BalanceTab = () => {
         </div>
                     
         <div className="col-6 colored_box_text">
-            <span className="balance-value pull-right">&#8358;{user?.data.walletBalance} </span>
+            <span className="balance-value pull-right">&#8358;{user?.data.walletBalance}.00 </span>
         </div>
 
         <div className="col-6">

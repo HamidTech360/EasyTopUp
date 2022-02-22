@@ -11,7 +11,7 @@ import List from '@material-ui/core/List';
 
 const useStyles = makeStyles({
     paper:{
-      background:'#2b044d',
+      background:'rgb(9, 9, 26)',
       paddingTop:'30px',
       width:'240px',
       border:'1px solid rgba(255, 255, 255, 0.21)'
@@ -60,7 +60,7 @@ const SwipeableSideNav = (props)=>{
 
             <div className="row welcome_card">
               <div className="col-2">
-                <img src="assets/avatar.png" className="avatar_profile_img" alt="" />
+                <img src="../../../assets/avatar.png" className="avatar_profile_img" alt="" />
               </div>
               <div className="col-8 welcomeText">
                 Welcome User

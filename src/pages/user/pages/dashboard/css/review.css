@@ -5,4 +5,9 @@
 .btn-review{
     margin-top: 20px;
     font-size: 13px;
+    background-color:#8965a8;
+    color:lightgrey;
+}
+.btn-review:hover{
+    color:white;
 }

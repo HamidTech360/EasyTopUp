@@ -9,13 +9,13 @@ const TransactionTab = () => {
                 <div className="col-5 trans-history history">
                     <i className="fa fa-1x fa-archive history-icon"></i>
                     <Link to="payment_history" style={{textDecoration:'none', color:'initial'}}>
-                        <div className="history-text">Transaction History</div>
+                        <div className="history-text">Funding History</div>
                     </Link>
                 </div>
                 <div className="col-5 wallet-summary history">
                     <i className="fa fa-1x fa-archive wallet-summary-icon"></i>
                     <Link to="/user/vtu_history" style={{textDecoration:'none', color:'initial'}}>
-                        <div className="history-text">Wallet Summary</div>
+                        <div className="history-text">Transaction Summary</div>
                     </Link>
                 </div>
             </div>

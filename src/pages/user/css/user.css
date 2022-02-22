@@ -2,7 +2,7 @@
     padding: 0 !important;
     margin-left: 20px;
     font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
+    
 }
 
 .profile_grid{
@@ -33,5 +33,6 @@
     }
     .dashboard-content{
         margin-left: unset;
+        overflow-x: hidden;
     }
 }
