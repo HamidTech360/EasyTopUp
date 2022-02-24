@@ -55,7 +55,7 @@ const Data = ()=> {
         const clone = {...data}
         clone[e.currentTarget.name] = e.currentTarget.value
         setData(clone)
-        console.log(data);
+        //console.log(data);
           
       }
   
@@ -70,14 +70,20 @@ const Data = ()=> {
                 }
             })
             console.log(response.data);
-            setShowDialogMsg(false)
-            setShowProgress(false)
+            if(response.data.status){
+                setShowSuccessMsg('Transaction successfull')
+                dispatch(login(response.data))
+                setShowDialogMsg(false)
+                setShowProgress(false)
+                setShowErrMsg(null)
+            }
 
         }catch(ex){
             console.log((ex?.response.data));
             setShowProgress(false)
             setShowDialogMsg(false)
             setShowErrMsg(ex?.response.data)
+            setShowSuccessMsg(null)
         }
       }
       if(open){

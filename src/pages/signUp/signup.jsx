@@ -43,6 +43,7 @@ const SignUp= ()=>{
             if(response.data.status==="success"){
                 setShowErrorMsg(null)
                 setShowSuccessMsg(true)
+                setShowProgress(false)
             }
          
         }catch(error){

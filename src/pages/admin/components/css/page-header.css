@@ -1,0 +1,8 @@
+.profile_header_wrapper{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    min-height: 70px;
+    padding-right: 100px;
+    /* border: 2px solid black; */
+}

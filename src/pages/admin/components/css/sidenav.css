@@ -1,0 +1,36 @@
+.list-item{
+    line-height: 50px;
+    cursor: pointer;
+    /* color: lightgrey; */
+}
+.list-item-text{
+    font-size: 13px;
+    font-weight: 600;
+    color: whitesmoke;
+}
+.list-item-icon{
+    margin-right: 10px;
+    
+    color: rgb(189, 189, 189);
+}
+.dashboard-logo{
+    width: 150.09px;
+    height: 40px;
+}
+.fixed-logout{
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    top: 95%;
+    color: #D7634E;
+    left: 10%;
+}
+.dash-list-item:hover{
+    background-color:rgba(255, 255, 255, 0.15) ;
+}
+.dash-page-name{
+    padding-left: 20px;
+    font-weight: 700;
+    color: fuchsia;
+    /* font-size: 20px; */
+}

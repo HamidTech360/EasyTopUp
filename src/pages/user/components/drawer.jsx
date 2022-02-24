@@ -58,18 +58,20 @@ const SwipeableSideNav = (props)=>{
         >
           <List>
 
-            <div className="row welcome_card">
-              <div className="col-2">
-                <img src="../../../assets/avatar.png" className="avatar_profile_img" alt="" />
-              </div>
-              <div className="col-8 welcomeText">
-                Welcome User
-                <div className="faint_welcome">
-                  Get Easy topUp @ EasyTopUp
+            <Link to="/user" style={{textDecoration:'none'}}>
+              <div className="row welcome_card">
+                <div className="col-2">
+                  <img src="../../../assets/avatar.png" className="avatar_profile_img" alt="" />
                 </div>
-              </div>
+                <div className="col-8 welcomeText">
+                  Welcome User
+                  <div className="faint_welcome">
+                    Get Easy topUp @ EasyTopUp
+                  </div>
+                </div>
 
-            </div>
+              </div>
+            </Link>
 
             {props.options.map((text, index) => (
               

@@ -1,0 +1,28 @@
+.payment_history{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.table-content{
+    overflow-x: scroll;
+    max-width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+}
+.thead{
+    font-size: 14px;
+    font-weight: 800;
+}
+.table-header{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width:768px){
+    .table-header{
+        font-size: 23px;
+        margin-top: 30px;
+        font-weight: 500;
+        margin-bottom: 40px;
+    }
+}

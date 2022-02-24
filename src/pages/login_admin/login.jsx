@@ -8,15 +8,12 @@ import Footer from '../../components/footer/footer';
 
 
 
-import './css/login.css'
+// import './css/login.css'
 
 
 const Login = ()=>{
-    // const history = useHistory()
-    const navigate = useNavigate()
-    // const {user} = useSelector(state=>state.user)
-    // const dispatch = useDispatch()
-    
+   
+    const navigate = useNavigate()  
     const [showProgress, setShowProgress] = useState(false)
     const [showErrorMsg, setShowErrorMsg] = useState(null)
     const [data, setData] = useState({
@@ -35,12 +32,12 @@ const Login = ()=>{
        
         try{
             
-            let response = await axios.post(`${apiUrl}/user/auth`,data)
+            let response = await axios.post(`${apiUrl}/admin/auth`,data)
             
             console.log(response.data);
             if(response.data.status==="success"){
-                localStorage.removeItem('auth_token')
-                localStorage.setItem('auth_token', response.data.token)
+                localStorage.removeItem('admin_auth_token')
+                localStorage.setItem('admin_auth_token', response.data.token)
                 navigate('/user')
             }
             
@@ -61,7 +58,7 @@ const Login = ()=>{
             
             <div className="signup-form-box">
                 <div className="bold-text signup_heading text-center">
-                    User Login
+                    Admin Login
                 </div>
                  
                     <div className="mb-3">

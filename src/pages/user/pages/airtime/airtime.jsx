@@ -74,11 +74,15 @@ const Airtime = ()=>{
             if(response.data.status){
                 setShowSuccessMsg('Transaction successfull')
                 dispatch(login(response.data))
+                setShowDialogMsg(false)
+                setShowProgress(false)
+                setShowErrMsg(null)
             }
         }catch(ex){
             setShowProgress(false)
             setShowDialogMsg(false)
             setShowErrMsg(ex.response?.data)
+            setShowSuccessMsg(null)
             console.log(ex.response?.data);
         }
 

@@ -15,7 +15,7 @@ const BalanceTab = () => {
                    <span className="user-img-span">
                         <img src="../../../../assets/avatar.png" className="avatar_profile_img" alt="" />    
                    </span>
-                    <span className="user-name">{user?.data.lastName|| 'Unknown'}</span>
+                    <span className="user-name">{user?.data.firstName|| 'Unknown'}</span>
              </div>
         </div>
         

@@ -16,7 +16,7 @@ const PaymentHistory = ()=>{
 
     useEffect(()=>{
         async function getData (){
-            const response = await axios.get(`${apiUrl}/pay`, {headers:{
+            const response = await axios.get(`${apiUrl}/pay/all_payments`, {headers:{
                 'Authorization':token
             }})
             console.log(response.data);

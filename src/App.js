@@ -5,6 +5,8 @@ import Home from './pages/home/home';
 import SignUp from './pages/signUp/signup';
 import Login from './pages/login/login';
 import User from './pages/user/user'
+import AdminLogin from './pages/login_admin/login'
+import Admin from './pages/admin/admin';
 
 import store from './store/store'
 
@@ -16,7 +18,9 @@ function App() {
         <ScrollToTop/>
         <Routes>
           <Route path="/user/*" element={<User/>}/>
+          <Route path="/admin/*" element={<Admin/>}/>
           <Route path="/login" element={ <Login/> }/>
+          <Route path="/admin_login" element={ <AdminLogin/> }/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/" element={<Home/>}/>
         </Routes>

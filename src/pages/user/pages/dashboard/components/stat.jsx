@@ -34,7 +34,7 @@ const Statistics = () => {
                     </div>
                     <div className="stat-grid-text">
                         <div className="stat-grid-bold-text">Total Funding</div>
-                        <div className="stat-amount"> &#8358; {data.totalPayment/100} </div>
+                        <div className="stat-amount"> &#8358; {data.totalPayment} </div>
                     </div>
                 </div>
 

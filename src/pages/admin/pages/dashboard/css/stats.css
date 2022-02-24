@@ -1,0 +1,8 @@
+#user-tbl-content{
+    margin-top: 30px;
+}
+@media screen and (max-width:768px) {
+    #user-tbl-content{
+        padding-left: 20px;
+    }
+}

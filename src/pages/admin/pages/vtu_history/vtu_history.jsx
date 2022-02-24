@@ -7,16 +7,16 @@ import moment from 'moment'
 import SimpleBackdrop from '../../../../components/backdrop/backdrop'
 
 //styles
-import './css/payment.css'
+// import './css/payment.css'
 
-const PaymentHistory = ()=>{
+const VtuHistory = ()=>{
     const token = localStorage.getItem('auth_token')
-    const [data, setData] = useState([])
     const [open, setOpen] = useState(true)
+    const [data, setData] = useState([])
 
     useEffect(()=>{
         async function getData (){
-            const response = await axios.get(`${apiUrl}/pay`, {headers:{
+            const response = await axios.get(`${apiUrl}/vtu/all_transactions`, {headers:{
                 'Authorization':token
             }})
             console.log(response.data);
@@ -27,21 +27,23 @@ const PaymentHistory = ()=>{
         }
         getData()
     },[])
+
     if(open){
         return(
           <SimpleBackdrop open={open} />
         )
-      }
+    }
+
     return(
         <div className="payment_history">
-           <div className="table-header">Wallet Funding History</div>
+           <div className="table-header">Transaction History</div>
            <div className="table-content">
                
                 <table className="table table-striped">
                     <thead>
                         <tr>
                             <th scope='col'>Amount</th>
-                            <th scope='col'>Reference</th>
+                            <th scope='col'>Type</th>
                             <th scope='col'>Date</th>
                         </tr>
                     </thead>
@@ -49,7 +51,7 @@ const PaymentHistory = ()=>{
                       {data.map((item, i)=>
                         <tr key={i}>
                           <td>NGN {item.amount}</td>
-                          <td>{item.reference}</td>
+                          <td>{item.type}</td>
                           <td>{moment(item.updatedAt).format('LLL')}</td>
                       </tr>
                       )}
@@ -60,4 +62,4 @@ const PaymentHistory = ()=>{
     )
 }
 
-export default PaymentHistory
+export default VtuHistory

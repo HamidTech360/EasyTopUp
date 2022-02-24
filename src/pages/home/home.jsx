@@ -34,14 +34,20 @@ const Home = () => {
         {
           label:'Services',
           target:'/#services',
-          icon:'fa-address-book',
+          icon:'fa-gg-circle',
           hash:true
         },
         {
           label:'Sign In',
           target:'/login',
           icon:'fa-user'
+        }, 
+        {
+          label:'Admin',
+          target:'/admin_login',
+          icon:'fa-address-book'
         },
+        
         
       ]
 

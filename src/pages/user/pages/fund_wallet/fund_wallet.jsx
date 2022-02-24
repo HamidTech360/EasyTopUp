@@ -36,7 +36,7 @@ const Fund_wallet = ()=>{
         const clone = {...data}
         clone[e.currentTarget.name] = e.currentTarget.value
         setData(clone)
-        console.log(data);
+        //console.log(data);
     }
 
     const handleSubmit = async (e)=>{

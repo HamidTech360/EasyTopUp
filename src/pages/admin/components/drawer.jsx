@@ -1,31 +1,30 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import clsx from 'clsx';
-import {HashLink} from 'react-router-hash-link'
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 
-
-import './header.css'
-
+ import './css/drawer.css'
 
 
-
-const SwipeableSideNav = (props)=>{
-  
-  const useStyles = makeStyles({
+const useStyles = makeStyles({
     paper:{
-      background:' rgb(9, 9, 26)',
+      background:'rgb(9, 9, 26)',
       paddingTop:'30px',
       width:'240px',
       border:'1px solid rgba(255, 255, 255, 0.21)'
      
     }
   })
-    
-  const styles = useStyles()
+
+
+const SwipeableSideNav = (props)=>{
+
+    const navigate = useNavigate()
+    const styles = useStyles()
+   
 
 
     const [state, setState] = React.useState({
@@ -33,7 +32,10 @@ const SwipeableSideNav = (props)=>{
         left:false
       });
 
-
+    const LogOut = ()=>{
+      localStorage.clear()
+      navigate('/')
+    }
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -58,7 +60,7 @@ const SwipeableSideNav = (props)=>{
 
             <div className="row welcome_card">
               <div className="col-2">
-                <img src="assets/avatar.png" className="avatar_profile_img" alt="" />
+                <img src="../../../assets/avatar.png" className="avatar_profile_img" alt="" />
               </div>
               <div className="col-8 welcomeText">
                 Welcome User
@@ -71,25 +73,24 @@ const SwipeableSideNav = (props)=>{
 
             {props.options.map((text, index) => (
               
-               text.hash?
-               <HashLink key={index} to={text.target} style={{textDecoration:'none', color:'black'}}>
-               <div className="home-side-navs">
-                   <span className="home-nav-icon"><i className={`fa ${text.icon} dynamic_icons`}></i></span>
-                   <span className="home-nav-item"><span>{text.label}</span></span>
-               </div> 
-             </HashLink>:
-              <Link key={index} to={text.target} style={{textDecoration:'none', color:'black'}}>
-              <div className="home-side-navs">
-                  <span className="home-nav-icon"><i className={`fa ${text.icon} dynamic_icons`}></i></span>
-                  <span className="home-nav-item"><span>{text.label}</span></span>
-              </div> 
-            </Link>
+                <Link 
+                  key={index} 
+                  to={text.target} 
+                  style={{textDecoration:'none', color:'whitesmoke'}}
+                  
+                >
+                  <div className="drawer-list">
+                        <span className="drawer-icon"><i className={`fa ${text.icon}`}></i> </span>
+                        <span className="drawer-label">{text.label}</span>
+                  </div>               
+                </Link>
              
             ))}
 
-            <div className="home-side-navs">
-            <Link to="/signup"><button className="banner1-btn-join">Register now </button></Link>
-            </div>
+                  <div className="drawer-list"  style={{textDecoration:'none', color:'whitesmoke'}} onClick={()=>LogOut()}>
+                        <span className="drawer-icon"><i className={`fa fa-user-times`}></i> </span>
+                        <span className="drawer-label">LogOut</span>
+                  </div>    
           </List>
      
         </div> 
@@ -99,7 +100,7 @@ const SwipeableSideNav = (props)=>{
         <div>
         
           <React.Fragment>
-            <Button onClick={toggleDrawer(props.position, true)}><i className="fa fa-align-left fa-2x" style={{color:'#2b044d'}}></i></Button>
+            <Button onClick={toggleDrawer(props.position, true)}><i className="fa fa-align-left fa-2x"></i></Button>
             <SwipeableDrawer
               anchor={props.position}
               open={state[props.position]}

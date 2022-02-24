@@ -7,16 +7,16 @@ import moment from 'moment'
 import SimpleBackdrop from '../../../../components/backdrop/backdrop'
 
 //styles
-import './css/payment.css'
+// import './css/payment.css'
 
-const PaymentHistory = ()=>{
+const Reviews = ()=>{
     const token = localStorage.getItem('auth_token')
     const [data, setData] = useState([])
     const [open, setOpen] = useState(true)
 
     useEffect(()=>{
         async function getData (){
-            const response = await axios.get(`${apiUrl}/pay`, {headers:{
+            const response = await axios.get(`${apiUrl}/review`, {headers:{
                 'Authorization':token
             }})
             console.log(response.data);
@@ -34,22 +34,22 @@ const PaymentHistory = ()=>{
       }
     return(
         <div className="payment_history">
-           <div className="table-header">Wallet Funding History</div>
+           <div className="table-header">Users' Reviews</div>
            <div className="table-content">
                
                 <table className="table table-striped">
                     <thead>
                         <tr>
-                            <th scope='col'>Amount</th>
-                            <th scope='col'>Reference</th>
+                            <th scope='col'>Email</th>
+                            <th scope='col'>Review</th>
                             <th scope='col'>Date</th>
                         </tr>
                     </thead>
                     <tbody>
                       {data.map((item, i)=>
                         <tr key={i}>
-                          <td>NGN {item.amount}</td>
-                          <td>{item.reference}</td>
+                          <td>{item.email}</td>
+                          <td>{item.review}</td>
                           <td>{moment(item.updatedAt).format('LLL')}</td>
                       </tr>
                       )}
@@ -60,4 +60,4 @@ const PaymentHistory = ()=>{
     )
 }
 
-export default PaymentHistory
+export default Reviews
