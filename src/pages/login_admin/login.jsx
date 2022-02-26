@@ -38,7 +38,7 @@ const Login = ()=>{
             if(response.data.status==="success"){
                 localStorage.removeItem('admin_auth_token')
                 localStorage.setItem('admin_auth_token', response.data.token)
-                navigate('/user')
+                navigate('/admin')
             }
             
 

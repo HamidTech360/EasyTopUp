@@ -129,23 +129,23 @@ const Data = ()=> {
                                 <option value="">please select a plan</option>
                                 {apiResponse.MTN_PLAN?.map((item, i)=>
                                     <option key={i} value={`${item.dataplan_id}-${item.plan_amount}`}> 
-                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
+                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{parseInt(item.plan_amount) + (item.plan_amount * 0.05)} 
                                     </option>
                                 )}
                                 {apiResponse.GLO_PLAN?.map((item, i)=>
                                     <option key={i} value={`${item.dataplan_id}-${item.plan_amount}`}> 
-                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
+                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{parseInt(item.plan_amount) + (item.plan_amount * 0.05)} 
                                     </option>
                                 )}
 
                                 {apiResponse.AIRTEL_PLAN?.map((item, i)=>
                                     <option key={i} value={`${item.dataplan_id}-${item.plan_amount}`}> 
-                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
+                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{parseInt(item.plan_amount) + (item.plan_amount * 0.05)} 
                                     </option>
                                 )}
                                 {apiResponse['9MOBILE_PLAN']?.map((item, i)=>
                                     <option key={i} value={`${item.dataplan_id}-${item.plan_amount}`}> 
-                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{item.plan_amount} 
+                                        {item.plan_network} {item.plan_type} {item.plan} {item.month_validate} N{parseInt(item.plan_amount) + (item.plan_amount * 0.05)} 
                                     </option>
                                 )}
                                
