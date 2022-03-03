@@ -13,7 +13,7 @@ const DashBoard = ({}) => {
     const {user} = useSelector(state=>state.user)
     return ( 
      <div className="dashboard">
-       {!user?.data.isVerified?<div className="alert alert-warning text-center">Please verify your account from your email</div>:''} 
+       {user?.data.status!=="verified"?<div className="alert alert-warning text-center">Please verify your account from your email</div>:''} 
          <BalanceTab/>
         <TransactionTabs/>
         <Statistics/>
