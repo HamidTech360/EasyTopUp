@@ -10,7 +10,7 @@ import SimpleBackdrop from '../../../../components/backdrop/backdrop'
 // import './css/payment.css'
 
 const VtuHistory = ()=>{
-    const token = localStorage.getItem('auth_token')
+    const token = localStorage.getItem('admin_auth_token')
     const [open, setOpen] = useState(true)
     const [data, setData] = useState([])
 
@@ -39,9 +39,11 @@ const VtuHistory = ()=>{
            <div className="table-header">Transaction History</div>
            <div className="table-content">
                
-                <table className="table table-striped">
+                <table className="table table-striped table-responsive">
                     <thead>
                         <tr>
+                            <th scope='col'>S/N</th>
+                            <th scope='col'>Email</th>
                             <th scope='col'>Amount</th>
                             <th scope='col'>Type</th>
                             <th scope='col'>Date</th>
@@ -50,7 +52,9 @@ const VtuHistory = ()=>{
                     <tbody>
                       {data.map((item, i)=>
                         <tr key={i}>
-                          <td>NGN {item.amount}</td>
+                          <td> {i+1} </td>
+                          <td> {item.email} </td>
+                          <td>&#8358; {item.amount}</td>
                           <td>{item.type}</td>
                           <td>{moment(item.updatedAt).format('LLL')}</td>
                       </tr>

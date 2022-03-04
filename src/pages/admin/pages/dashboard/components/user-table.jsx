@@ -9,6 +9,7 @@ const UserTable = ({data}) => {
         <table className="table table-striped">
             <thead>
                 <tr>
+                    <th scope='col'>S/N</th>
                     <th scope='col'>Name</th>
                     <th scope='col'>Email</th>
                     <th scope='col'>WalletBalance</th>
@@ -19,6 +20,7 @@ const UserTable = ({data}) => {
             <tbody>
               {data?.map((item, i)=>
                 <tr key={i}>
+                  <td> {i+1} </td>
                   <td> {item.lastName} {item.firstName}</td>
                   <td>{item.email}</td>
                   <td>&#8358; {item.walletBalance}</td>

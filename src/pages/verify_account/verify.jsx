@@ -9,7 +9,7 @@ const VerifyAccount = () => {
     console.log(ref);
     useEffect(()=>{
        async function verifyAccount (){
-            const response = await axios.post(`${apiUrl}/verify_account`, {ref})
+            const response = await axios.post(`${apiUrl}/user/verify_account`, {ref})
             console.log(response.data);
             setData(response.data)
         }

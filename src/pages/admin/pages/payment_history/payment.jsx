@@ -37,9 +37,11 @@ const PaymentHistory = ()=>{
            <div className="table-header">Wallet Funding History</div>
            <div className="table-content">
                
-                <table className="table table-striped">
+                <table className="table table-striped table-responsive">
                     <thead>
                         <tr>
+                            <th scope='col'>S/N</th>
+                            <th scope='col'>Email</th>
                             <th scope='col'>Amount</th>
                             <th scope='col'>Reference</th>
                             <th scope='col'>Date</th>
@@ -48,6 +50,8 @@ const PaymentHistory = ()=>{
                     <tbody>
                       {data.map((item, i)=>
                         <tr key={i}>
+                          <td> {i+1} </td>
+                          <td> {item.email} </td>
                           <td>NGN {item.amount}</td>
                           <td>{item.reference}</td>
                           <td>{moment(item.updatedAt).format('LLL')}</td>
