@@ -64,7 +64,7 @@ const User = (props)=>{
       useEffect(()=>{
 
         const token = localStorage.getItem('auth_token')
-        if(!token) navigate('/login')
+        if(!token) return navigate('/login')
         async function getUserData (){
             try{
                 const response = await axios.get(`${apiUrl}/user`,{headers:{
@@ -96,8 +96,8 @@ const User = (props)=>{
                         <span className="pull-right bell-icon-on-mobile"><i className="fa fa-bell pull-right"></i></span>    
                     </div>
                     <div className="hideOnMobile">
-                        <Page_Header/>
-                        
+                    
+                        <Page_Header/> 
                     </div>
                 </div>
                
@@ -112,13 +112,13 @@ const User = (props)=>{
                <div className=" col-lg-7 col-md-7 col-sm-12 col-xs-12 dashboard-content"> 
                
                         <Routes>
-                            <Route path="/verify_payment"  element={<PaymentVerification/>} />
+                            <Route path="/verify_payment"  element={<PaymentVerification />} />
                             <Route path="/data"  element={<Data/>} />
                             <Route path="/airtime"  element={<Airtime/>} />
                             <Route path="/fund_wallet"  element={<Fund_wallet/>} />
                             <Route path="/payment_history"  element={<PaymentHistory/>} />
                             <Route path="/vtu_history"  element={<VtuHistory/>} />
-                            <Route path="/"  element={<DashBoard/>} />
+                            <Route path="/"  element={<DashBoard />} />
                         </Routes>
                      
                    

@@ -1,4 +1,4 @@
 {
-    "-apiUrl":"http://localhost:4000/api",
-    "apiUrl":"https://easytopup.herokuapp.com/api"
+    "apiUrl":"http://54.146.66.174/api",
+    "-apiUrl":"https://easytopup.herokuapp.com/api"
 }
